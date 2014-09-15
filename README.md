@@ -16,11 +16,13 @@ web server container ($USER/oc-nginx).
 
 1. setup your database server
 2. run the data contaier: `docker run -d --name oc_data $USER/oc-data`
-3. run the server container:
+3. replace keys and certificates with your own in `oc-nginx/ssl/nginx`
+4. run the server container:
    `docker run -d -p 80:80 -p 443:443 --volumes-from oc_data $USER/oc-nginx`
 
-There is also an example run script that bootstraps everything (including mysql
-server container). Default mysql account is `admin:password`.
+There is also an example run script (run.exmaple.sh) that bootstraps everything
+(including mysql server container). Default account for mysql is
+`admin:password`.
 
 ## Configure ##
 
